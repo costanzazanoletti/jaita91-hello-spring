@@ -17,4 +17,14 @@ public class IndexController {
     // ritorna una stringa che è il nome del template che si trova in resources/templates
     return "homepage";
   }
+
+  /*
+  * @GetMapping("/about") significa che risponde a richieste di tipo GET
+  * all'url http://localhost:8080/about
+  * */
+  @GetMapping("/about")
+  public String aboutUs(){
+    // ritorna il nome del template about.html che si trova in resources/templates
+    return "about";
+  }
 }
