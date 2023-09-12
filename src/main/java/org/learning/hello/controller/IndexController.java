@@ -1,6 +1,9 @@
 package org.learning.hello.controller;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,8 +15,9 @@ public class IndexController {
    * risponde a http://localhost:8080
    */
   @GetMapping // indica che risponde a richieste di tipo GET
-  public String index(){
-
+  public String index(Model model){
+    String mySubtitle = LocalDateTime.now().toString();
+    model.addAttribute("subtitle", mySubtitle);
     // ritorna una stringa che è il nome del template che si trova in resources/templates
     return "homepage";
   }
